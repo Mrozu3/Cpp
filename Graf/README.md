@@ -1,0 +1,1 @@
+Implementacja grafu za pomocą macierzy sąsiedztwa oraz listy sąsiedztwa.
