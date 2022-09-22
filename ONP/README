@@ -1,0 +1,35 @@
+Opis problemu:
+Odwrotna Notacja Polska (ONP) to sposób zapisu wyrażeń arytmetycznych, w którym znak wykonywanej operacji umieszczony jest po operandach ( liczbach ), a nie pomiędzy nimi jak w konwencjonalnym zapisie algebraicznym. Zapis ten pozwala na całkowitą rezygnację z użycia nawiasów w wyrażeniach, jako że jednoznacznie określa kolejność wykonywanych działań. Ułatwia to wykonywanie obliczeń z nawiasami na komputerach z zachowaniem odpowiedniej kolejności działań.
+
+Użyta struktura danych: Tablicowa Implementacja Stosu
+Do konwersji jak i obliczania notacji ONP wykorzystywany jest stos. Stos to lista, w której wstawianie oraz usuwanie elementów odbywa się tylko na jednym końcu zwanym wierzchołkiem stosu. Dozwolone są na nim operacje wstawania ( stos.Push() ) i usuwania ( stos.Pop() ) elementu z wierzchołku stosu oraz zwracania elementu ze szczytu stosu ( stos.TopElem() ). Dodatkowo pomocnicze okazuje się sprawdzanie czy stos jest pusty ( stos.Empty() ) oraz czynienie stosu pustym ( stos.MakeNull ).
+
+Złożoność obliczeniowa:
+Wszystkie operacje na stosie w implementacji listy tablicowej czyli wstawanie ( stos.Push() ) , usuwanie ( stos.Pop() ), wyświetlanie elementu na stosie ( stos.TopElem() ) jak i sprawdzanie czy stos jest pusty ( stos.Empty() ) mają złożoność O(1), co wynika z zasady działania stosu gdzie mamy dostęp tylko do elementu na jego szczycie.
+Złożoność algorytmu Konwersji jak i Obliczania wartości ONP posiadać będzie całkowitą złożoność liniową O(n). Potrzebny czas rośnie proporcjonalnie do ilości danych czyli długości wyrażenia które podamy na wejściu. Odczytywanie w pętli for każdego elementu jest naszym głównym wyznacznikiem czasu, ponieważ same warunki oraz operacje na stosie będą wykonywały się tyle ile elementów przyjdzie nam przetworzyć.
+
+Dane wprowadzamy w jednej linii oddzielone spacją lub nie, dozwolone są cyfry całkowite oraz nawiasy "(" (otwierający), ")" (zamykający) oraz operatory "+" (dodawanie), "-" (odejmowanie), "*" (mnożenie), "/", (dzielenie całkowite), "^" (potęgowanie).
+Wprowadzane dane muszą być zapisane bezbłędnie, program nie posiada sprawdzania poprawności wprowadzonego wyrażenia.
+
+
+Aby skompilować
+----> 	make all
+Aby uruchomić programy
+---->	make konwersja
+---->	make oblicz
+Uruchamianie bez makefile
+---->	g++ -c KonwersjaONP.cpp
+---->	g++ -o KonwersjaONP.out KonwersjaONP.o
+----> 	./KonwersjaONP.out
+Uruchamianie bez makefile
+---->	g++ -c ObliczanieONP.cpp
+---->	g++ -o ObliczanieONP.out ObliczanieONP.o
+----> 	./ObliczanieONP.out
+Aby wyczyścić niepotrzebne pliki
+---->	make clear
+Aby utworzyć tar
+---->	make tar
+Aby usunąć plik tar
+----> 	make cleartar
+
+
